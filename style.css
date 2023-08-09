@@ -2,30 +2,45 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Noto Sans TC', 'Roboto';
+    font-family: "Roboto", "Noto Sans TC", sans-serif;
     line-height: 1.5;
 }
 img{
-    vertical-align: middle;
     max-width: 100%;
+    vertical-align: middle;
     height: auto;
 }
-h1{
+a{
+    text-decoration: none;
+}
+.fz64{
     font-size: 64px;
-    font-weight: bold;
 }
-h2{
-    font-size: 5vmin;
-    font-weight: bolder;
-}
-h3{
+.fz36{
     font-size: 36px;
 }
-h4{
-    font-weight: bold;
+.fz48{
+    font-size: 48px;
+}
+.fz40{
+    font-size: 40px;
+}
+.fz24{
     font-size: 24px;
 }
-.fsi{
+.fz20{
+    font-size: 20px;
+}
+.fz16{
+    font-size: 16px;
+}
+.fz14{
+    font-size: 14px;
+}
+.fw-bold{
+    font-weight: bold;
+}
+.fs-italic{
     font-style: italic;
 }
 .white{
@@ -82,38 +97,96 @@ h4{
 .tal{
     text-align: left;
 }
-.btn{
-    text-decoration: none;
-}
 .fwb{
     font-weight: bold;
-}
-.plr12{
-    padding-left: 12px;
-    padding-right: 12px;
 }
 
 /*header*/
 .container{
-    max-width: 1296px;
+    max-width: 1320px;
     margin: 0 auto;
+    padding: 0 12px;
+
+    /* 平板 */
+    @media (max-width: 768px) {
+        max-width: 720px;
+    }
+    /* 手機 */
+    @media (max-width: 375px) {
+        max-width: 372px;
+    }
 }
-.mw80{
-    max-width: 80px;
+.navbar{
+    padding: 16px 0;
+
+    /* 為何如此設計 */
+    @media (max-width: 768px) {
+        padding-bottom: 0;
+    }
 }
-.w492{
-    width: 492px;
+.navbar-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        /* 移除左右 padding 再加入 max-width: 100%; 讓導覽列能變為滿版 */
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+    }
 }
-.fz20{
+.navbar-logo{
+    width: 80px;
+  
+    @media (max-width: 768px) {
+        margin: 0 0 16px 16px;
+    }
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+} 
+.navbar-item {
+    height: 100%;
+    
+    @media (max-width: 768px) {
+      width: 50%;
+      margin-right: 0px;
+      border: 1px solid #ffffff;
+    }
+}
+.navbar-link {
+    height: 100%;
+    display: block;
     font-size: 20px;
+    color: #ffffff;
+    padding: 8px 32px;
+    
+    @media (max-width: 768px) {
+      font-size: 16px;
+      text-align: center;
+      padding: 12px 0;
+    }
 }
+.navbar-link:hover {
+    opacity: 0.7;
+} 
+/* 這啥? */
+/* .navbar-item:last-child .navbar-link {
+    padding-right: 0;
+} */
+  
+
+
 .ptb16{
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 16px 0;
 }
-.liw0{
-    width: 25%;
-}
+
 
 /*banner*/
 .bg-img{
@@ -155,8 +228,18 @@ h4{
     padding-bottom: 80px;
 }
 .introduction{
-    max-width: 1296px;
+    max-width: 1320px;
     margin: 0 auto;
+    padding: 0 12px;
+
+    /* 平板 */
+    @media (max-width: 768px) {
+        max-width: 720px;
+    }
+    /* 手機 */
+    @media (max-width: 375px) {
+        max-width: 372px;
+    }
 }
 
 /*category*/
@@ -179,8 +262,18 @@ h4{
     padding-bottom: 48px;
 }
 .stylew{
-    max-width: 1296px;
+    max-width: 1320px;
     margin: 0 auto;
+    padding: 0 12px;
+
+    /* 平板 */
+    @media (max-width: 768px) {
+        max-width: 720px;
+    }
+    /* 手機 */
+    @media (max-width: 375px) {
+        max-width: 372px;
+    }
 }
 .liw3{
     width: 50%;
@@ -199,9 +292,7 @@ h4{
 }
 
 /*recommend*/
-.fz14{
-    font-family: 14px;
-}
+
 .mb72{
     margin-bottom: 72px;
 }
@@ -230,9 +321,7 @@ h4{
 .opacity{
     opacity: 0.2;
 }
-.fz16{
-    font-size: 16px;
-}
+
 .opinion{
     padding-top: 6px;
     padding-left: 12px;
@@ -242,6 +331,12 @@ h4{
 .agree{
     padding-top: 16px;
     padding-bottom: 48px;
+}
+.mb16{
+    margin-bottom: 16px;
+}
+.mt8{
+    margin-top: 8px;
 }
 
 /*footer*/
@@ -260,12 +355,7 @@ h4{
 .mr48{
     margin-right: 48px;
 }
-.fz36{
-    font-size: 36px;
-}
-.fz40{
-    font-size: 40px;
-}
+
 .mw48{
     max-width: 48px;
 }
@@ -276,11 +366,13 @@ h4{
     padding-top: 48px;
     padding-bottom: 32px;
 }
-
-@media(max-width: 768px) {
-    .container{
-        max-width: 768px;
-    }
+.fz48-1{
+    font-size: 48px;
+}
+.fz36-1{
+    font-size: 36px;
+}
+@media(max-width: 987px) {
     .bg-img{
         background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header-sm.png?raw=true);
     }
@@ -311,26 +403,26 @@ h4{
     .push{
         margin-bottom: 24px;
     }
-    h2{
-        font-size: 48px;
-    }
-    h3{
-        font-size: 5vmin;
-    }
     
 }
-@media(max-width: 375px) {
-    .container{
-        max-width: 375px;
-    }
-    h1{
+@media(max-width: 576px) {
+    .fz64{
         font-size: 24px;
     }
-    h2{
+    .fz36{
+        font-size: 16px;
+    }
+    .fz48{
         font-size: 24px;
     }
-    h3, .fz14{
-        font-size: 5vmin;
+    .fz20{
+        font-size: 16px;
+    }
+    .pb48-1{
+        padding-bottom: 24px;
+    }
+    .mb72{
+        margin-bottom: 96px;
     }
     .w492{
         margin-top: 16px;
@@ -342,12 +434,6 @@ h4{
     }
     .wrap{
         flex-wrap: wrap;
-    }
-    .w-boreder{
-        border: 1px solid #ffffff;
-    }
-    .liw0{
-        width: 50%;
     }
     .liw1{
         width: 100%;
@@ -368,8 +454,8 @@ h4{
     .mr32{
         margin-right: 8px;
     }
-    .enlarge{
-        font-size: 10vmin;
+    .push2{
+        margin-bottom: 24px;
     }
     .w-60{
         width: 100%;
@@ -390,5 +476,11 @@ h4{
     }
     .mb24{
         margin-bottom: 8px;
+    }
+    .fz36-1{
+        font-size: 16px;
+    }
+    .fz40{
+        font-size: 20px;
     }
 }
